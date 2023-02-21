@@ -10,3 +10,9 @@
 
 2. Typescript `npm i typescript @types/react @types/node -D`
 
+> Toda vez que alguma modificação for feita no arquivo `_document.tsx` o servidor tem que ser reiniciado, porque o Next só roda o arquivo uma unica vez e não fica monitorando o arquivo!
+
+    Se as Fontes do Google não carregarem, exclua a pasta `.next` onde está o 'cache' e rode novamento o sever `npm run dev`.
+
+<br /><hr /><br />
+
