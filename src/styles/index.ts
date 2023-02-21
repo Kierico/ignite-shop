@@ -23,6 +23,16 @@ export const {
 
             greenLight300: '#00b37e',
             green500: '#00875f',
-        }
+
+            upGradient: '#1ea483',
+            downGradient: '#7465d4',
+        },
+
+        fontSizes: {
+            md: '1.125rem', // 18px
+            lg: '1.25rem', // 20px
+            xl: '1.5rem', // 24px
+            '2xl': '2rem', // 32px
+        },
     }
 })
