@@ -16,3 +16,22 @@
 
 <br /><hr /><br />
 
+## #02 Estrutura Visual
+
+### #2.1 Configurando Stitches
+
+[ <img src="public\stitches.svg" style="with:100px; height:100px; background-color: white;"> ](https://stitches.dev/)
+
+`npm install @stitches/react`
+
+[Server-side rendering](https://stitches.dev/docs/server-side-rendering)
+
+```tsx
+<Head>
+    {/* Adicionar no '_document.tsx' para renderizar a estilização mesmo com o Javascript desabilitado. */}
+    <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
+</Head>
+```
+
+<br /><hr /><br />
+
