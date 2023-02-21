@@ -35,3 +35,12 @@
 
 <br /><hr /><br />
 
+### #2.6 Criando Carrossel
+
+[ <img src="public\radix.svg" style="with:100px; height:100px; background-color: white;"> ](https://www.radix-ui.com/docs/primitives/overview/getting-started)
+
+
+[ <img src="public\keen-slider.png" style="with:50px; height:50px;"> ](https://keen-slider.io/)
+
+`npm install keen-slider`
+

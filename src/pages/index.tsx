@@ -1,4 +1,8 @@
 import Image from "next/image";
+
+/* Rook do Keen-Slider */
+import { useKeenSlider } from 'keen-slider/react';
+
 import { HomeContainer, Product } from "../styles/pages/home";
 
 import camiseta1 from '../assets/camisetas/1.png';
@@ -6,18 +10,45 @@ import camiseta2 from '../assets/camisetas/2.png';
 import camiseta3 from '../assets/camisetas/3.png';
 import camiseta4 from '../assets/camisetas/4.png';
 
+/* CSS do Keen-Slider */
+import 'keen-slider/keen-slider.min.css';
+
 export default function Home() {
+
+  /* Keen-Slider */
+  const [sliderRef] = useKeenSlider({
+    slides: {
+      perView: 3,
+      spacing: 48, // gap / padding
+    }
+  })
+
   return (
-    <HomeContainer>
-      <Product>
+    /* passar no "HomeContainer" a 'ref' e as 'className', e em "Product" as 'className' para funcionar o Keen-Slider. */
+    <HomeContainer ref={sliderRef} className="keen-slider">
+      <Product className="keen-slider__slide">
         <Image src={camiseta1} width={520} height={480} alt="" />
         <footer>
           <strong>Camiseta</strong>
           <span>R$ 79,90</span>
         </footer>
       </Product>
-      <Product>
+      <Product className="keen-slider__slide">
         <Image src={camiseta2} width={520} height={480} alt="" />
+        <footer>
+          <strong>Camiseta</strong>
+          <span>R$ 79,90</span>
+        </footer>
+      </Product>
+      <Product className="keen-slider__slide">
+        <Image src={camiseta3} width={520} height={480} alt="" />
+        <footer>
+          <strong>Camiseta</strong>
+          <span>R$ 79,90</span>
+        </footer>
+      </Product>
+      <Product className="keen-slider__slide">
+        <Image src={camiseta4} width={520} height={480} alt="" />
         <footer>
           <strong>Camiseta</strong>
           <span>R$ 79,90</span>

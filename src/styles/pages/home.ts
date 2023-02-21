@@ -2,7 +2,7 @@ import { styled } from "..";
 
 export const HomeContainer = styled('main', {
     display: "flex",
-    gap: '3rem',
+    // gap: '3rem', // atrapalha no Keen-Slider
     width: '100%',
 
     /* Calcula a largura da tela */
@@ -15,7 +15,7 @@ export const HomeContainer = styled('main', {
 export const Product = styled('a', {
     background: 'linear-gradient(180deg, $upGradient 0%, $downGradient 100%)',
     borderRadius: 8,
-    padding: '0.25rem', //4px
+    // padding: '0.25rem', //4px // atrapalha no Keen-Slider
     cursor: 'pointer',
     position: "relative", // pq o footer estará com o position: absolute;
     overflow: "hidden",
