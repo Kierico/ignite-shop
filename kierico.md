@@ -44,3 +44,54 @@
 
 `npm install keen-slider`
 
+<br /><hr /><br />
+
+### #3.1 Configurando Conta Stripe
+
+Email: `kierico.dev`
+
+<br /><hr /><br />
+
+### #3.2 Data Fetching no Next.js
+
+> só renderiza a tela depois que o `getServerSideProps` termina de execultar, para poder mostrar no lado do 'client'.
+
+```tsx
+    export const getServerSideProps = async () => {
+        await new Promise(resolve => setTimeout(resolve, 2000))
+
+        return {
+            props: {
+                list: [1, 2, 3]
+            }
+        }
+    }
+
+```
+    Benefícios:
+        * O que roda no `getServerSideProps` não é visível para o 'client' final.
+        * Pode fazer chamadas API's, pois será reproduzida em uma camada onde o usuário não tem acesso.
+        * Pode colocar código sensível (código de autenticação, código de BD).
+
+<br /><hr /><br />
+
+### #3.3 Buscando produtos do Stripe
+
+`npm i stripe`
+
+ImageUrl:
+```js
+    /* next.config.js */
+    module.exports = {
+        images: {
+            domains: [
+                'files.stripe.com',
+            ]
+        }
+    }
+```
+
+    Depois de configurar o `next.config.js` reiniciar o server 'npm run dev'.
+
+<br /><hr /><br />
+
