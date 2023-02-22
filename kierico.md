@@ -52,6 +52,8 @@
 
 Email: `kierico.dev`
 
+[ <img src="public\stripe.svg" style="with:100px; height:100px; background-color: white;"> ](https://dashboard.stripe.com/test/dashboard)
+
 <br /><hr /><br />
 
 ### #3.2 Data Fetching no Next.js

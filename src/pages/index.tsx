@@ -1,6 +1,7 @@
 import { GetStaticProps } from "next";
 import Stripe from "stripe";
 import Link from "next/link";
+import Head from "next/head";
 
 import { stripe } from "../lib/stripe";
 
@@ -34,35 +35,40 @@ export default function Home({ products }: HomeProps) {
   })
 
   return (
-    /* passar no "HomeContainer" a 'ref' e as 'className', e em "Product" as 'className' para funcionar o Keen-Slider. */
-    <HomeContainer ref={sliderRef} className="keen-slider">
+    <>
+      <Head>
+        <title>Home | Ignite Shop</title>
+      </Head>
 
-      {/* <pre>{JSON.stringify(products)}</pre> */}
+      {/* passar no "HomeContainer" a 'ref' e as 'className', e em "Product" as 'className' para funcionar o Keen-Slider. */}
+      <HomeContainer ref={sliderRef} className="keen-slider">
 
-      {products.map(product => {
-        return (
-          <Link
-            href={`/product/${product.id}`}
-            key={product.id}
-            prefetch={false} // 'false' só carrega os links no ':hover'.
-          >
-            <Product className="keen-slider__slide">
-              <Image
-                src={product.imageUrl}
-                width={520}
-                height={480}
-                alt=""
-              />
-              <footer>
-                <strong>{product.name}</strong>
-                <span>{product.price}</span>
-              </footer>
-            </Product>
-          </Link>
-        )
-      })}
+        {/* <pre>{JSON.stringify(products)}</pre> */}
 
-    </HomeContainer >
+        {products.map(product => {
+          return (
+            <Link
+              href={`/product/${product.id}`}
+              key={product.id}
+              prefetch={false} // 'false' só carrega os links no ':hover'.
+            >
+              <Product className="keen-slider__slide">
+                <Image
+                  src={product.imageUrl}
+                  width={520}
+                  height={480}
+                  alt=""
+                />
+                <footer>
+                  <strong>{product.name}</strong>
+                  <span>{product.price}</span>
+                </footer>
+              </Product>
+            </Link>
+          )
+        })}
+      </HomeContainer >
+    </>
   )
 }
 
