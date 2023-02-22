@@ -95,3 +95,9 @@ ImageUrl:
 
 <br /><hr /><br />
 
+### #3.4 Utilizando SSG
+
+    Cria páginas estáticas iguais para todos o usuários.
+    Quando se usa `getStaticProps`, não temos acesso ao contexto da requisição (nem o 'req' e 'res').
+    Só é executado quando roda a 'build' da aplicação.
+    Não tenho informação do cooke se há algum usuário logado.
