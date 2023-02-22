@@ -3,6 +3,7 @@ import Stripe from "stripe";
 import Image from "next/image";
 import { stripe } from "@/src/lib/stripe";
 import { ImageContainer, ProductContainer, ProductDetails } from "../../styles/pages/product";
+import { useRouter } from "next/router";
 
 interface ProductProps {
     product: {
@@ -15,6 +16,12 @@ interface ProductProps {
 }
 
 export default function Product({ product }: ProductProps) {
+
+    const { isFallback } = useRouter()
+
+    if (isFallback) {
+        return <strong>Loading...</strong>
+    }
 
     return (
         <ProductContainer>
@@ -40,14 +47,20 @@ export default function Product({ product }: ProductProps) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
     return {
+
+        /* Páginas dos Produtos que serão criadas no momento da 'build' */
         paths: [
-            {
-                params: {
-                    id: 'prod_NP72rn0Wo7Moz6'
-                }
-            }
+            { params: { id: 'prod_NP72rn0Wo7Moz6' } }
         ],
-        fallback: false,
+
+        /* Semelhante ao 'true', mas deixa a tela em branco até renderizar as telas. */
+        fallback: 'blocking',
+
+        /* Por debaixo dos panos cria todas as páginas dos produtos, mesmo não estando no `paths`. */
+        // fallback: true,
+
+        /* Só cria a página do produto que foi passado no `paths`. */
+        // fallback: false,
     }
 }
 
