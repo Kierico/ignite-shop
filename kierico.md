@@ -46,6 +46,8 @@
 
 <br /><hr /><br />
 
+## #03 Integração com Stripe
+
 ### #3.1 Configurando Conta Stripe
 
 Email: `kierico.dev`
@@ -101,3 +103,15 @@ ImageUrl:
     Quando se usa `getStaticProps`, não temos acesso ao contexto da requisição (nem o 'req' e 'res').
     Só é executado quando roda a 'build' da aplicação.
     Não tenho informação do cooke se há algum usuário logado.
+
+
+<br /><hr /><br />
+
+## #04 Produto & Checkout
+
+### #4.9 Botão de comprar
+
+`npm i axios`
+
+<br /><hr /><br />
+

@@ -12,7 +12,7 @@ export const HomeContainer = styled('main', {
     marginLeft: 'auto',
 });
 
-export const Product = styled('a', {
+export const Product = styled('div', {
     background: 'linear-gradient(180deg, $upGradient 0%, $downGradient 100%)',
     borderRadius: 8,
     // padding: '0.25rem', //4px // atrapalha no Keen-Slider
